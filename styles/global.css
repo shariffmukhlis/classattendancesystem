@@ -1,0 +1,273 @@
+:root {
+    --primary-color: #3D3D3D;
+    --secondary-color: #FFC700;
+    --tertiary-color: #e4e3e3;
+}
+*,*::before, *::after{
+    box-sizing: border-box;
+    margin: 0;
+}
+html{
+    font-size: 100%;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    background: var(--tertiary-color);
+ }
+ 
+ body{
+   height: 100vh;
+   background-image: url(../images/bg.jpg);
+   background-color: rgb(70, 70, 70);
+   background-blend-mode: multiply;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: 50% 40%;
+ }
+
+  nav{
+    background: var(--primary-color);
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 5;
+ }
+ .school{
+    display:flex;
+    align-content: center;
+    align-items: center;
+
+ }
+ .school > *{
+    margin-right: 1.5rem;
+ }
+ .school-name h3{
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    font-weight: 600;
+    letter-spacing: 3px;
+    margin: 0;
+    padding: 0;
+ }
+ .school-name p{
+    color: var(--tertiary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 3px;
+    line-height: 5px;
+    margin: 0;
+    text-transform: uppercase;
+    padding: 0;
+ }
+ .school-logo{
+    width: 5rem;
+    margin-left: 2rem;
+ }
+ ul{
+    display: flex;
+    align-items: center;
+    list-style: none;
+ }
+ li a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--tertiary-color);
+    margin: 1rem;
+    padding-bottom: 0.3rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease-in-out;
+ }
+
+ .menu-list:hover{
+   color: var(--secondary-color);
+
+ }
+.menu-list:after {
+  position: absolute;
+  content: '';
+  border-bottom: solid 3px var(--secondary-color); 
+  width: inherit;
+  left: 0;
+  top: 0;
+  right: 0;
+  transform: scaleX(0);  
+  transition: transform 250ms ease-in-out;
+}
+.menu-list:hover:after { transform: scaleX(1); }
+
+ .login-btn{
+
+   color: var(--primary-color);
+    background: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    border: solid 2px var(--secondary-color);
+ }
+ 
+.login-btn:hover{
+   color: var(--secondary-color);
+   background: none;
+ }
+ section {
+   margin: auto;
+   align-items: center;
+   padding: 5% 20%;
+   text-align: center;
+ }
+
+.title h3{
+   color: var(--secondary-color);
+   font-size: 4.5rem;
+   font-weight: 600;
+   letter-spacing: 3px;
+   margin: 0;
+   padding: 0;
+}
+.title p{
+   color: var(--tertiary-color);
+   font-size: 1rem;
+   font-weight: 500;
+   letter-spacing: 3px;
+   line-height: 5px;
+   margin-bottom: 2rem;
+   text-transform: uppercase;
+   padding: 0;
+}
+section > p {
+   color: var(--tertiary-color);
+   font-size: 1rem;
+   font-weight: 400;
+   margin: 0;
+   margin-bottom: 2rem;
+   padding: 0;
+}
+span{
+   display: none;
+   background-color: var(--tertiary-color);
+   width: 2rem;
+   height: 0.2rem;
+   margin-bottom: 5px;
+}
+#hamburgermenu{
+   display: none;
+   cursor: pointer;
+}
+#hamburgermenu .line{
+   width: 2rem;
+   height: 0.25rem;
+   background-color: var(--secondary-color);
+   margin: 0.5rem;
+   transition: all 0.3s ease-in-out;
+}
+
+
+@media screen and (max-width: 1060px) {
+   html{
+      font-size: 80%;
+   }
+   section {
+      padding: 5% 10%;
+   }
+   .school-name{
+      font: 50%;
+   }
+   .menu{
+      display: block;
+      opacity: 0;
+      position: fixed;
+      top: 0px;
+      left: 0; 
+      width: 80%;
+      margin: 0 10%;
+      background: var(--tertiary-color);
+      height: 150px;
+      padding: 0 10%; 
+      text-align: center;
+      align-content: center;
+      transition: all 0.3s ease-in-out;
+      border-radius: 10px;
+      z-index: -100;
+   }
+   .menu > *{
+      opacity: 0;
+   }
+   
+   .hamburgermenu{
+      display: block;
+   }
+
+   span{
+      display: block;
+   }
+   .hamburgermenu .line{
+      width: 2rem;
+      height: 0.25rem;
+      background-color: var(--secondary-color);
+      margin: 0.5rem;
+      transition: all 0.3s ease-in-out;
+   }
+
+   span{
+      display: block;
+      width: 30px;
+      height: 3px;
+      margin: 5px auto;
+      transition: all 0.3s ease-in-out;
+    
+  }
+  .hamburger.active span:nth-child(1){
+      width: 30px;
+      transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2){
+      width: 30px;
+      transform: rotate(0deg) translate(-5px, 0px);
+      opacity: 0;
+  }
+  .hamburger.active span:nth-child(3){
+      transform: rotate(-45deg) translate(6px, -5px);
+  }
+
+   .open{
+      transform: translateY(120px);
+      opacity: 1; 
+
+   }
+   .open > * {
+      font-size: 150%;
+      opacity: 1;
+      margin: 10px 0;
+      padding: 0;
+   }
+   .open a{
+      color: var(--primary-color);
+   }
+   
+}
+img #logout{
+   background-color: white;
+}
+
+#account a{
+   color: white;
+}
+@media screen and (max-width: 630px) {
+   .school-name h3{
+      font-size: 1.5rem;
+   }
+   .school-name p{
+      font-size: 0.8rem;
+   }
+
+}
